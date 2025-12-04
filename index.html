@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Total Grades Calculator</title> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .box {
+            background-color: whitesmoke;
+            width: 100%;
+            padding: 10px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color:black;
+            margin-bottom: 16px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+            border: 1px solid #f1f1f1;   
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+        .row input {
+            flex: 1;
+        }
+        button {
+            background-color: #514caf;
+            color: white;
+            padding: 11px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            font-weight: bold;
+            border: 1px solid tan;
+            border-radius:5px;
+            display: none;
+        }
+        .summary-box {
+            background: ghostwhite;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 16px;
+            border: 1px solid blueviolet;
+        }
+</style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Student Total Grades Calculator</h2>
+     
+        <input id="fname" type="text" placeholder="Enter First Name">
+        <input id="lname" type="text" placeholder="Enter Last Name">
+        
+        <h4>Enter Your Grades For Each Subject</h4>
+        <div class="row">
+            <input id="math" type="number" placeholder="Math">
+            <input id="science" type="number" placeholder="Science">
+            <input id="english" type="number" placeholder="English">
+            <input id="social-studies" type="number" placeholder="Social Studies">
+            <input id="music-arts" type="number" placeholder="Music And Arts">
+        </div>
+ 
+<script>
+    function calcGWA() {
+        let fname = document.getElementById("fname").value;
+        let lname = document.getElementById("lname").value;
+
+        let math = Number(document.getElementById("math").value);
+        let science = Number(document.getElementById("science").value);
+        let english = Number(document.getElementById("english").value); 
+        let socialStudies = Number(document.getElementById("social-studies").value);
+        let musicAndArts = Number(document.getElementById("music-arts").value);
+
+        let gwa = (s + m + e + ss + ma) / 5;
+
+        document.getElementById("summary").style.display = "block";
+        document.getElementById("output").innerHTML = `Hello, ${fname} ${lname}. Your General Weighted Average (GWA) is ${gwa.toFixed(2)}.`;
+
+        document.getElementById("output").style.display="block";
+        document.getElementById("output").innerHTML = <strong>`Hello, ${fname} ${lname}. Your General Weighted Average (GWA) is ${gwa.toFixed(2)}</strong>;
+
+    }
+    </script>
+    </body>
+    </html>
